@@ -1,0 +1,14 @@
+# 2020-02-06-KaoDian
+
+//命令行输入参数
+public class PrintAge{
+        public static void main(String[] args){
+                if(args==null || args.length!=2){ //判断参数是否符合要求
+                        return;
+                }
+                String user = args[0];            //获取用户名参数
+                String age = args[1];         //获取年龄参数
+                //打印
+                System.out.println("User "+user+" is "+age+" years old.");
+        }
+}
