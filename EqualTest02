@@ -1,0 +1,30 @@
+# 2020-02-06-KaoDian
+
+//Equal()方法用来比较字符串的字符序列是否完全相等。
+
+//学生类
+class Student{
+    private String name;           //姓名
+    private int age;               //年龄
+    public Student(String name,int age){
+        this.name=name;
+        this.age=age;
+    }
+
+    //比较方法，只有姓名和年龄都相等才相等
+    @Override
+    public boolean equals(Object obj) {
+       Student stu=(Student)obj;
+       return this.name.equals(stu.name)&&this.age==stu.age;
+    }
+}
+
+public class EqualTest02{
+    public static void main(String[] args) {
+        //比较两个学生对象是否相等
+        Student stu1=new Student("lisa",10);
+        Student stu2=new Student("lisa",10);
+        System.out.println(stu1.equals(stu2));   //true
+    }
+}
+//如果将其中一个学生对象的姓名或年龄改掉，则结果变为false
