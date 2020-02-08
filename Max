@@ -1,0 +1,20 @@
+# 2020-02-06-KaoDian
+
+
+//以下是一段使用三元运算符打印最大值的示例代码：
+public class Max {
+    public static void main(String[] args) {
+        int a=5;
+        int b=8;
+        //String rst=a>b?"a bigger than b":"b bigger than a";
+        //System.out.println(rst);
+
+        String rst=null;
+        if(a>b){
+            rst="a bigger than b";
+        }else {
+            rst="b bigger than a";
+        }
+        System.out.println(rst);
+    }
+}
