@@ -1,0 +1,31 @@
+# 2020-02-06-KaoDian
+
+//多态实现
+
+ class Man {
+    int eyes = 2;                   //眼睛数量
+    String getEyesColor(){          //返回人眼睛的颜色
+        return null;
+    }
+}
+ class AsiaMan extends Man{     //亚洲人
+    String getEyesColor(){      //覆盖返回人眼睛的颜色的方法，为黑色
+        return "black";
+    }
+}
+
+ class EuroMan extends Man{     //欧洲人
+    String getEyesColor(){      //覆盖返回人眼睛的颜色的方法，为蓝色
+        return "blue";
+    }
+}
+
+//多态性测试类
+public class PolymorphismTest{
+    public static void main(String[] args) {
+        Man asiaMan = new AsiaMan();  //创建一个亚洲人，转换成Man类型
+        Man euroMan = new EuroMan();  //创建一个欧洲人，转换成Man类型
+        System.out.println("Asia men eyes' color is "+ asiaMan.getEyesColor());
+        System.out.println("Euro men eyes' color is "+ euroMan.getEyesColor());
+    }
+}
