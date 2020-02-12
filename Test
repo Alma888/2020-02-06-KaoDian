@@ -1,0 +1,19 @@
+# 2020-02-06-KaoDian
+
+//equals  与 ==  都是相等的意思
+//比较两个字符串是否相同——用“equals()方法”
+//“==”运算符运用在基本数据类型的时候，通过比较它们实际的值来判定是否相同；
+// 而用于比较引用类型的时候，则是比较两个引用的地址是否相等，也就是是否指向同一个对象。
+
+
+public class Test {
+    public static boolean Judge(String str){
+        return str.toLowerCase()=="admain";         //false
+        //return str.toLowerCase().equals("admain"); //true
+    }
+
+    public static void main(String[] args) {
+        String s="Admain";
+        System.out.println(Judge(s));
+    }
+}
