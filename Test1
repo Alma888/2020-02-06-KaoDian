@@ -1,0 +1,19 @@
+# 2020-02-06-KaoDian
+
+//String str;
+//str . toUpperCase(); //把输入的字符串中的小写字母全部变成大写字母
+//str . toLowerCase(); //把输入字符串中的大写字母全部变成小写字母。
+public class Test2 {
+    public static void main(String[] args) {
+        String a="Fmn";
+        a.toUpperCase();
+        System.out.println(a); //Fmn
+    //——————————————————
+        String x="Fmn".toUpperCase();
+        System.out.println(x);//FMN
+    //——————————————————
+        String y=a.replace('f','F');
+        y=y+"wxy";
+        System.out.println(y);//Fmnwxy
+    }
+}
