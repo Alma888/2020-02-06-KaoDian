@@ -1,0 +1,56 @@
+# 2020-02-06-KaoDian
+
+       如何理解Java中的装箱和拆箱
+基本数据类型的自动装箱（autoboxing）和拆箱（unboxing）是Java5.0提供的新功能。虽然   为打包基本数据类型提供了方便，  但是在提供方便的同时却隐藏了一些细节，建议在能够区分基本数据类型与对象的差别时再使用。
+
+答：Java中的装箱和拆箱指的是基本数据类型和包装类型的自动相互转换，它为开发者提供了方便。开发人员也可以不使用它，而手动的进行类型转换。并且，这个自动转换的过程是在编译阶段。
+
+一、Java的基础数据类型与包装类型的关系
+       在Java中，所有要处理的东西几乎都是对象。操作对象比操作基本数据类型更方便一些，而基本数据类型的效率更高。因此，在开发过程中，两者的转换是经常需要的。
+
+二、Java装箱和拆箱的原理
+
+（1）自动装箱
+      对于提供的自动装箱的功能，开发者可以直接使用以下语句来打包基本数据类型：  Integer integer = 10；
+在进行编译时，编译器再自动根据你写下的语句，判断是否进行自动装箱动作
+在上例中，integer变量是Integer类的实例，同样动作可以适用于boolean、byte、short、char、long、float、double等基本数据类型，分别会使用对应的包装类型Boolean、Byte、Short、Long、Float或Double。以下是直接使用
+自动装箱功能的示例：
+public class AutoBoxDemo {
+    public static void main(String[] args) {
+        Integer data1=10;   //自动装箱
+        Integer data2=20;   //自动装箱
+        //转为double值再除以3
+        System.out.println(data1.doubleValue()/3);  //3.3333333333333335
+        //进行两个值的比较
+        System.out.println(data1.compareTo(data2)); //-1
+    }
+}
+
+//程序看起来简洁了很多，data1与data2在运行时就是Integer的实例，可以直接进行对象操作。
+
+
+（2）自动拆箱
+      Java5.0以上的版本可以自动装箱，也可以自动拆箱，也就是将对象中的基本数据形态信息从对象中自动取出，例如下面这样写是可以的：
+ Integer fooInteger = 10;
+ int fooPrimitive = fooInteger;
+ 
+ //fooInteger变量在自动装箱为Integer的实例后，如果被指定给一个int类型的变量
+   fooPrimitive ，则会自动变为int类型再指定给fooPrimitive。另外，在运算时，
+   也可以进行自动装箱与拆箱，代码如下：
+ Integer i = 10;
+ System.out.println(i+10);  //20
+ System.out.println(i++);   //10
+ //上例中会显示20和10，编译器会自动进行装箱与拆箱，也就是10会先被装箱，然后在
+   i+10时会先拆箱，再进行加法运算，i++时也是先拆箱再进行递增运算
+
+
+
+
+
+
+
+
+
+
+
+
