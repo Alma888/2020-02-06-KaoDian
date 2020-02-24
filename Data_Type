@@ -1,0 +1,35 @@
+# 2020-02-06-KaoDian
+
+     Java包含哪些基本数据类型以及包装类
+答：Java一共提供了8种基础数据类型及包装类，它们均可以实现相互的转换
+基本数据类型 包装类
+byte Byte
+short Short
+int Integer
+
+float Float
+double Double
+boolean Boolean
+char Character
+
+一、Java一共提供了8种基础数据类型，分别是byte、short、int、long、  
+       float、double、boolean和char。它们所对应的包装类均在java.lang 包
+       中，分别是Byte、Short、Integer、Long、Float、Double、Boolean和
+       Character。
+
+--------------------------------------------------------------------------------
+（1）基本数据类型变量转换成包装类型变量   ——   valueOf()方法
+当有的地方必须要使用对象或引用数据类型的时候，例如集合类(List、Set等)
+基本数据类型就不能使用了，因为它们的存储原理和引用数据类型是完全不一样的。把基本数据类型的变量转换成包装类型很简单，用new语句创建或调用包装类的一个静态方法valueOf()，把基本类型的变量作为参数传入即可，示例代码如下：
+int i = 10;                         //定义int变量i
+Integer itg = Integer.valueOf(i);   //用valueOf()方法把i转成Integer变量
+itg = new Integer(i);               //用构造方法创建
+
+List list = new ArrayList();        //创建一个List类型的集合变量
+list.add(itg);                      //把封装类型的itg放入list中
+
+
+（2）包装类转换基本类型  ——  intValue()、shortValue()、doubleValue()，当包装类转换成基本数据类型时，则调用包装类对象的intValue()、shortValue()、doubleValue()等方法，代码如下所示：
+Integer itg = Integer.valueOf(100);
+itg.intValue();
+
